@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QMBD - Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">QMBD</div>
+        <nav>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul id="nav-menu">
+                <li><a href="#new-movies">New</a></li>
+                <li><a href="#upcoming-movies">Upcoming</a></li>
+                <li><a href="#now-playing-movies">Now Playing</a></li>
+                <li><a href="#top-rated-movies">Top Rated</a></li>
+                <li><a href="#comedy-movies">Comedy</a></li>
+                <li><a href="#horror-movies">Horror</a></li>
+                <li><a href="#anime-movies">Anime</a></li>
+            </ul>
+            <input type="text" id="search" placeholder="Search for movies...">
+        </nav>
+    </header>
+
+    <!-- Section to display search results -->
+    <section class="search-section">
+        <h2 id="search-heading"></h2>
+        <!-- Dynamic heading for search results -->
+        <div id="search-results" class="movie-grid"></div>
+        <!-- Search results will appear here -->
+    </section>
+
+    <section id="categories">
+        <h2>New Movies</h2>
+        <div id="new-movies" class="movie-grid"></div>
+        <h2>Upcoming Movies</h2>
+        <div id="upcoming-movies" class="movie-grid"></div>
+        <h2>Now Playing</h2>
+        <div id="now-playing-movies" class="movie-grid"></div>
+        <h2>Top Rated Movies</h2>
+        <div id="top-rated-movies" class="movie-grid"></div>
+        <h2>Comedy Movies</h2>
+        <div id="comedy-movies" class="movie-grid"></div>
+        <h2>Horror Movies</h2>
+        <div id="horror-movies" class="movie-grid"></div>
+        <h2>Anime Movies</h2>
+        <div id="anime-movies" class="movie-grid"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 QMBD</p>
+    </footer>
+
+    <script src="home.js"></script>
+</body>
+
+</html>
