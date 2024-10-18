@@ -234,8 +234,9 @@ footer {
         justify-content: center;
         margin: 20px 0;
     }
-    .movie-grid img {
-        height: 100px;
+     .movie-grid img {
+        width: 100px;
+        height: auto;
     }
 }
 
