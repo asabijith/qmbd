@@ -198,3 +198,6 @@ footer {
 .float {
     animation: float 3s ease-in-out infinite;
 }
+iframe {
+    border-radius: 7px;
+}
