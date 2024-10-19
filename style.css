@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background: linear-gradient(90deg, #3b6df5, #899fff, #107fff, #2a63ff);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
@@ -33,7 +33,7 @@ body {
 
 @keyframes gradientBG {
     0% {
-        background-position: 0% 50%;
+        background-position: 0 % 50%;
     }
     50% {
         background-position: 100% 50%;
@@ -116,12 +116,31 @@ nav input {
     margin-left: auto;
 }
 
-.menu-toggle div {
+.menu-toggle .bar {
     width: 25px;
     height: 3px;
     background-color: white;
     margin: 4px 0;
     transition: 0.4s;
+}
+
+.menu-toggle .bar:nth-child(2) {
+    width: 20px;
+}
+
+
+/* Menu toggle animation */
+
+.menu-toggle.open .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
 
@@ -138,7 +157,6 @@ nav input {
 .movie-grid div {
     padding: 10px;
     text-align: center;
-    /* From https://css.glass */
     background: rgba(255, 255, 255, 0.28);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -165,17 +183,6 @@ nav input {
 .movie-grid p {
     font-size: 18px;
     margin-top: 10px;
-}
-
-
-/* Footer styles */
-
-footer {
-    text-align: center;
-    background-color: rgba(51, 51, 51, 0.8);
-    padding: 20px;
-    color: #aaa;
-    margin-top: 40px;
 }
 
 
@@ -212,7 +219,7 @@ footer {
     }
     /* Adjust movie grid for smaller screens */
     .movie-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax( 150px, 1fr));
     }
     .movie-grid img {
         height: 150px;
@@ -235,7 +242,7 @@ footer {
         margin: 20px 0;
     }
     .movie-grid img {
-        width: 100px;
+        width: 160px;
         height: auto;
     }
 }
@@ -296,7 +303,7 @@ footer {
     height: 3rem;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M13.823 12.234c-.016.35-.13.688-.331.975a1.7 1.7 0 0 1-.829.643a1.77 1.77 0 0 1-1.053.088a1.8 1.8 0 0 1-.926-.516a1.9 1.9 0 0 1-.468-.976a1.76 1.76 0 0 1 .127-1.043c.144-.327.38-.606.682-.8c.307-.19.662-.291 1.024-.292c.477.026.926.232 1.258.575a1.85 1.85 0 0 1 .516 1.346'/%3E%3Cpath fill='black' d='M17.265 8.002a2.26 2.26 0 0 0-1.248-1.248a2.6 2.6 0 0 0-.887-.175H8.968A2.31 2.31 0 0 0 6.667 8.88v6.279a2.3 2.3 0 0 0 .682 1.628a2.32 2.32 0 0 0 1.619.673h6.162a2.32 2.32 0 0 0 2.123-1.419a2.3 2.3 0 0 0 .178-.882v-6.27a2.6 2.6 0 0 0-.166-.887m-2.437 5.441a2.9 2.9 0 0 1-.644.975c-.28.283-.611.51-.975.673a3.13 3.13 0 0 1-2.486-.028a3.08 3.08 0 0 1-1.765-3.365a3.2 3.2 0 0 1 .829-1.59a3.11 3.11 0 0 1 3.354-.692c.567.23 1.05.628 1.384 1.141a3.03 3.03 0 0 1 .527 1.677c.014.415-.063.827-.224 1.209M15.9 8.626a.555.555 0 1 1-1.102 0a.557.557 0 1 1 1.102 0'/%3E%3Cpath fill='black' d='M16.875 2.25h-9.75A4.875 4.875 0 0 0 2.25 7.125v9.75a4.875 4.875 0 0 0 4.875 4.875h9.75a4.875 4.875 0 0 0 4.875-4.875v-9.75a4.875 4.875 0 0 0-4.875-4.875m2.067 12.812c.01.51-.087 1.019-.283 1.491a3.9 3.9 0 0 1-2.096 2.096c-.473.196-.98.292-1.492.283H9.075a3.8 3.8 0 0 1-1.492-.282a4 4 0 0 1-1.258-.839a3.9 3.9 0 0 1-.838-1.258a3.7 3.7 0 0 1-.312-1.492V9.018a3.8 3.8 0 0 1 .283-1.492A3.9 3.9 0 0 1 7.535 5.41a3.9 3.9 0 0 1 1.54-.263h6.045a3.8 3.8 0 0 1 2.73 1.121c.357.362.641.79.838 1.258c.195.473.292.98.283 1.492z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M13.823 12.234c-.016.35-.13.688-.331.975a1.7 1.7 0 0 1-.829.643a1.77 1.77 0 0 1-1.053.088a1.8 1.8 0 0 1-.926-.516a1.9 1.9 0 0 1-.468-.976a1.76 1.76 0 0 1 .127-1.043c.144-.327.38-.606.682-.8c.307-.19.662-.291 1.024-.292c.477.026.926.232 1.258.575a1.85 1.85 0 0 1 .516 1.346'/%3E%3Cpath fill='black' d='M17.265 8.002a2.26 2. 26 0 0 0-1.248-1.248a2.6 2.6 0 0 0-.887-.175H8.968A2.31 2.31 0 0 0 6.667 8.88v6.279a2.3 2.3 0 0 0 .682 1.628a2.32 2.32 0 0 0 1.619.673h6.162a2.32 2.32 0 0 0 2.123-1.419a2.3 2.3 0 0 0 .178-.882v-6.27a2.6 2.6 0 0 0-.166-.887m-2.437 5.441a2.9 2.9 0 0 1-.644.975c-.28.283-.611.51-.975.673a3.13 3.13 0 0 1-2.486-.028a3.08 3.08 0 0 1-1.765-3.365a3.2 3.2 0 0 1 .829-1.59a3.11 3.11 0 0 1 3.354-.692c.567.23 1.05.628 1.384 1.141a3.03 3.03 0 0 1 .527 1.677c.014.415-.063.827-.224 1.209M15.9 8.626a.555.555 0 1 1-1.102 0a.557.557 0 1 1 1.102 0'/%3E%3Cpath fill='black' d='M16.875 2.25h-9.75A4.875 4.875 0 0 0 2.25 7.125v9.75a4.875 4.875 0 0 0 4.875 4.875h9.75a4.875 4.875 0 0 0 4.875-4.875v-9.75a4.875 4.875 0 0 0-4.875-4.875m2.067 12.812c.01.51-.087 1.019-.283 1.491a3.9 3.9 0 0 1-2.096 2.096c-.473.196-.98.292-1.492.283H9.075a3.8 3.8 0 0 1-1.492-.282a4 4 0 0 1-1.258-.839a3.9 3.9 0 0 1-.838-1.258a3.7 3.7 0 0 1-.312-1.492V9.018a3.8 3.8 0 0 1 .283-1.492A3.9 3.9 0 0 1 7.535 5.41a3.9 3.9 0 0 1 1.54-.263h6.045a3.8 3.8 0 0 1 2.73 1.121c.357.362.641.79.838 1.258c.195.473.292.98.283 1.492z'/%3E%3C/svg%3E");
 }
 
 .vscode-icons--file-type-outlook {
@@ -305,5 +312,202 @@ footer {
     height: 3rem;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='black' d='M19.484 7.937v5.477l1.916 1.205a.5.5 0 0 0 .21 0l8.238-5.554a1.174 1.174 0 0 0-.959-1.128Z'/%3E%3Cpath fill='black' d='m19.484 15.457l1.747 1.2a.52.52 0 0 0 .543 0c-.3.181 8.073-5.378 8.073-5.378v10.066a1.408 1.408 0 0 1-1.49 1.555h-8.874zm-9.044-2.525a1.61 1.61 0 0 0-1.42.838a4.13 4.13 0 0 0-.526 2.218A4.05 4.05 0 0 0 9.02 18.2a1.6 1.6 0 0 0 2.771.022a4 4 0 0 0 .515-2.2a4.37 4.37 0 0 0-.5-2.281a1.54 1.54 0 0 0-1.366-.809'/%3E%3Cpath fill='black' d='M2.153 5.155v21.427L18.453 30V2Zm10.908 14.336a3.23 3.23 0 0 1-2.7 1.361a3.19 3.19 0 0 1-2.64-1.318A5.46 5.46 0 0 1 6.706 16.1a5.87 5.87 0 0 1 1.036-3.616a3.27 3.27 0 0 1 2.744-1.384a3.12 3.12 0 0 1 2.61 1.321a5.64 5.64 0 0 1 1 3.484a5.76 5.76 0 0 1-1.035 3.586'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='black' d='M19.484 7.937v5.477l1.916 1.205a.5.5 0 0 0 .21 0l8.238-5.554a1.174 1.174 0 0 0-.959-1.128Z'/%3E%3Cpath fill='black' d='m19.484 15.457l1.747 1.2a.52.52 0 0 0 .543 0c-.3.181 8.073-5.378 8.073-5.378v10.066a 1.408 1.408 0 0 1-1.49 1.555h-8.874zm-9.044-2.525a1.61 1.61 0 0 0-1.42.838a4.13 4.13 0 0 0-.526 2.218A4.05 4.05 0 0 0 9.02 18.2a1.6 1.6 0 0 0 2.771.022a4 4 0 0 0 .515-2.2a4.37 4.37 0 0 0-.5-2.281a1.54 1.54 0 0 0-1.366-.809'/%3E%3Cpath fill='black' d='M2.153 5.155v21.427L18.453 30V2Zm10.908 14.336a3.23 3.23 0 0 1-2.7 1.361a3.19 3.19 0 0 1-2.64-1.318A5.46 5.46 0 0 1 6.706 16.1a5.87 5.87 0 0 1 1.036-3.616a3.27 3.27 0 0 1 2.744-1.384a3.12 3.12 0 0 1 2.61 1.321a5.64 5.64 0 0 1 1 3.484a5.76 5.76 0 0 1-1.035 3.586'/%3E%3C/svg%3E");
+}
+
+iframe {
+    border-radius: 7px;
+}
+
+.ytp-button:not([aria-disabled=true]):not([disabled]):not([aria-hidden=true]) {
+    cursor: pointer;
+    background-color: #107fff;
+    color: #ffcc00;
+}
+
+.ytp-embed:not(.ad-showing) .ytp-title-text {
+    padding-top: 21px;
+    display: none;
+}
+
+.browser_trailer {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.trailer-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 17px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.trailer-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(9.2px);
+    -webkit-backdrop-filter: blur(9.2px);
+}
+
+.trailer-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.trailer-poster {
+    width: 70%;
+    max-width: 200px;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.trailer-poster:hover {
+    transform: scale(1.05);
+}
+
+.trailer-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.trailer-description {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.trailer-play-button {
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.trailer-play-button:hover {
+    background-color: #f40612;
+}
+
+.trailer-play-button svg {
+    margin-right: 0.5rem;
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY (-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.prev-button {
+    left: 0.5rem;
+}
+
+.next-button {
+    right: 0.5rem;
+}
+
+.video-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur( 9.2px);
+    -webkit-backdrop-filter: blur(9.2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.video-modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+}
+
+.close-modal {
+    position: absolute;
+    top: -30px;
+    right: 0;
+    color: white;
+    font-size: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.video-modal-content iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+@media (min-width: 768px) {
+    .browser_trailer {
+        height: 70vh;
+    }
+    .trailer-content {
+        max-width: 600px;
+    }
+    .trailer-poster {
+        width: auto;
+        height: 225px;
+    }
+    .trailer-description {
+        font-size: 1rem;
+    }
+    .nav-button {
+        font-size: 3rem;
+        padding: 1rem;
+    }
+    .prev-button {
+        left: 1rem;
+    }
+    .next-button {
+        right: 1rem;
+    }
 }
